@@ -16,7 +16,8 @@
         :prepend-icon="page.icon" :title="page.title"></v-list-item>
     </v-list>
   </v-navigation-drawer>
-  <Images v-if="selectedPage == 'Images'" />
+  <!-- <Images v-if="selectedPage == 'Images'" /> -->
+  <ImageList v-if="selectedPage == 'Images'" />
   <Artists v-if="selectedPage == 'Artists'" />
   <Modifiers v-if="selectedPage == 'Modifiers'" />
 </template>
@@ -24,6 +25,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Images from './Images.vue'
+import ImageList from './ImageList.vue'
 import Artists from './Artists.vue'
 import Modifiers from './Modifiers.vue'
 import artists from '../assets/artists.json'
@@ -58,6 +60,7 @@ export default defineComponent({
   },
   components: {
     Images,
+    ImageList,
     Artists,
     Modifiers
   }
