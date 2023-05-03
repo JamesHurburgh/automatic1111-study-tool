@@ -131,25 +131,25 @@ class PngMetadataReader {
         return chunklist;
     }
 
-    static joinChunk(chunklist: Chunk[]) {
-        var pf = this.PNG_SIG;
-        for (var i in chunklist) {
-            var chunk = chunklist[i];
-            // check size
-            // chunk.size = chunk.data.length;
-            // calc crc
-            // var crc_v = crc32(chunk.type + chunk.data);
-            // 
-            var buf = "";
-            buf += this.itos(chunk.size, 4);
-            buf += chunk.type;
-            buf += chunk.data;
-            buf += this.itos(chunk.crc, 4);
-            // console.log("w", chunk.size, chunk.type, ToUInt32(chunk.crc));
-            pf += buf;
-        }
-        return pf;
-    }
+    // static joinChunk(chunklist: Chunk[]) {
+    //     var pf = this.PNG_SIG;
+    //     for (var i in chunklist) {
+    //         var chunk = chunklist[i];
+    //         // check size
+    //         // chunk.size = chunk.data.length;
+    //         // calc crc
+    //         // var crc_v = crc32(chunk.type + chunk.data);
+    //         // 
+    //         var buf = "";
+    //         buf += this.itos(chunk.size, 4);
+    //         buf += chunk.type;
+    //         buf += chunk.data;
+    //         buf += this.itos(chunk.crc, 4);
+    //         // console.log("w", chunk.size, chunk.type, ToUInt32(chunk.crc));
+    //         pf += buf;
+    //     }
+    //     return pf;
+    // }
 
     static itos(v: number, size: number): string {
         const a: string[] = [];

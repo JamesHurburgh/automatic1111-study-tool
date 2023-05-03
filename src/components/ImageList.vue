@@ -3,27 +3,18 @@
     <v-toolbar color="primary" dark>
       <v-toolbar-title>Image List</v-toolbar-title>
       <v-spacer></v-spacer>
-        <v-btn icon="mdi-dots-vertical" @click="showFilters = !showFilters">
-    </v-btn>
+      <v-btn icon="mdi-dots-vertical" @click="showFilters = !showFilters">
+      </v-btn>
     </v-toolbar>
     <v-toolbar v-if="showFilters">
       <v-toolbar-title>Filters</v-toolbar-title>
-      <v-select
-        prepend-inner-icon="mdi-account"
-        :items="artists"
-        multiple
-        label="Artists"
-      ></v-select>
+      <v-autocomplete clearable prepend-inner-icon="mdi-account" :items="artists" v-model="selectedArtists" multiple
+        label="Artists" density="compact"></v-autocomplete>
     </v-toolbar>
     <v-card-text>
       <v-list :lines="false" density="compact">
-        <v-list-item
-          v-for="(image, i) in images"
-          :key="i"
-          :value="image"
-          active-color="primary"
-          :title="imageTitle(image)"
-        >
+        <v-list-item v-for="(image, i) in filteredImages" :key="i" :value="image" active-color="primary"
+          :title="imageTitle(image)">
           <template v-slot:prepend>
             <v-avatar rounded="0" size="x-large">
               <v-img :src="image.id"></v-img>
@@ -38,14 +29,8 @@
     </v-card-text>
     <v-card-actions>
       <div class="text-center">
-        <v-pagination
-          v-model="pageNumber"
-          :length="totalPages"
-          total-visible="10"
-          rounded="circle"
-          prev-icon="mdi-menu-left"
-          next-icon="mdi-menu-right"
-        ></v-pagination>
+        <v-pagination v-model="pageNumber" :length="totalPages" total-visible="10" rounded="circle"
+          prev-icon="mdi-menu-left" next-icon="mdi-menu-right"></v-pagination>
       </div>
     </v-card-actions>
   </v-card>
@@ -64,6 +49,7 @@ export default defineComponent({
       model: null as unknown as LocalImage,
       imageSize: 2,
       showFilters: false,
+      selectedArtists: [],
       artists: [
         "Anna Dittman",
         "Van Gogh",
@@ -77,15 +63,16 @@ export default defineComponent({
     ImageDatabase.initialise();
   },
   computed: {
-    images: function () {
-      var page = ImageDatabase.dao.getPage<LocalImage>(
-        this.pageNumber,
-        this.pageSize
-      );
-      return page;
+    filteredImages: function (): LocalImage[] {
+      return ImageDatabase.getFilteredPage({
+        pageNumber: this.pageNumber,
+        pageSize: this.pageSize,
+        artistFitler: this.selectedArtists
+      }
+      )
     },
     totalPages: function () {
-      return Math.ceil(ImageDatabaseStats.totalImages / this.pageSize);
+      return Math.ceil(this.filteredImages.length / this.pageSize);
     },
     pageSize: function (): number {
       return 24 / this.imageSize;

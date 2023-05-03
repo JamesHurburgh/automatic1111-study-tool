@@ -12,8 +12,16 @@ class ImageDatabase {
     private static _dao: Dao<LocalImage>;
 
     public static get dao(): Dao<LocalImage> {
-        if(!this._dao) throw ('ImageDatabase not initialised')
+        if (!this._dao) throw ('ImageDatabase not initialised')
         return ImageDatabase._dao;
+    }
+
+    public static getFilteredPage(params: { pageNumber: number; pageSize: number; artistFitler: string[]; }): LocalImage[] {
+        const startIndex = (params.pageNumber - 1) * params.pageSize;
+        const endIndex = startIndex + params.pageSize;
+        return this._database
+            .filter(li => params.artistFitler?.length == 0 || params.artistFitler.some(artistFilter => li.metaData?.prompt.toLowerCase().includes(artistFilter.toLowerCase())))
+            .slice(startIndex, endIndex)
     }
 
     static async initialise() {
@@ -29,7 +37,7 @@ class ImageDatabase {
         this.updateTotal()
     }
 
-    static updateTotal(){
+    static updateTotal() {
         console.log("Updating total")
         ImageDatabaseStats.totalImages = this._dao.total()
     }
