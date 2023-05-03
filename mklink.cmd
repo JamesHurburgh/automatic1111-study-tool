@@ -8,6 +8,8 @@ if %errorLevel% == 0 (
   exit
 )
 
+cd /d %~dp0
+
 set /p folderPath=Enter the root folder path to your image studies:
 
 if not exist "%folderPath%" (
@@ -19,3 +21,5 @@ if not exist "%folderPath%" (
 set linkPath=".\public\images\user-root"
 
 mklink /J "%linkPath%" "%folderPath%"
+
+pause
