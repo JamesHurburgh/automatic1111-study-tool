@@ -1,0 +1,641 @@
+[
+    {
+        "name": "Lighting",
+        "options": [
+            "golden hour, warm glow",
+            "blue hour, twilight, ISO12000",
+            "midday, direct lighting, overhead sunlight",
+            "overcast, whitebox, flat lighting, diffuse",
+            "dreamlike diffuse ethereal lighting",
+            "dramatic lighting, dramatic shadows, illumination",
+            "studio lighting, professional lighting, well-lit",
+            "flash photography",
+            "low-key lighting, dimly lit",
+            "high-key lighting, neutral, flat, even, ambient light"
+        ]
+    },
+    {
+        "name": "Angle & framing",
+        "options": [
+            "extreme close-up",
+            "close-up",
+            "medium shot, waist and torso shot",
+            "long shot, wide shot, full body",
+            "extreme long shot, extreme wide shot, from a distance",
+            "high overhead view, establishing shot, long drone shot",
+            "low angle, imposing, from below",
+            "satellite photography, bird's eye view, Google Maps Satellite view, (c) Planet Labs"
+        ]
+    },
+    {
+        "name": "Lens & Capture",
+        "options": [
+            "Fast shutter speed, 1/1000 sec shutter",
+            "Slow shutter speed, long exposure",
+            "bokeh, shallow depth of field, background blur",
+            "tilt shift photography",
+            "motion blur, fast motion capture",
+            "macro lens, macro photo, Sigma 105mm f/2.8",
+            "wide angle lens, 15mm, ultra-wide shot"
+        ]
+    },
+    {
+        "name": "Film selection",
+        "options": [
+            "Kodachrome",
+            "Autochrome",
+            "Polaroid scan, Instax scan",
+            "cameraphone 2007",
+            "Camera obscura, pinhole photography",
+            "double exposure, award-winning photograph",
+            "black and white, tri-x 400TX",
+            "bleach bypass",
+            "color splash",
+            "Instagram, Hipstamatic, 2015"
+        ]
+    },
+    {
+        "name": "Specific film & TV",
+        "options": [
+            "from TV show Friends, Season 3",
+            "from The Grand Budapest Hotel, Wes Anderson",
+            "from Blade Runner 2049",
+            "from film Interstellar",
+            "from film The Matrix, 1999",
+            "by Simon Stålenhag"
+        ]
+    },
+    {
+        "name": "Art style",
+        "options": [
+            "American newspaper political cartoon sketch, black and white New Yorker cartoon",
+            "woodcut painting",
+            "charcoal sketch",
+            "watercolor",
+            "acrylic on canvas",
+            "colored pencil, detailed",
+            "oil painting",
+            "airbrush",
+            "Chinese watercolor painting",
+            "vector graphics, clipart",
+            "watercolor & pen",
+            "digital painting",
+            "layered paper",
+            "low poly, unreal engine, Blender render",
+            "isometric 3D, highest quality render",
+            "Houdini 3D, Octane render, ZBrush, Blender, highest quality 3D render",
+            "claymation",
+            "still from Pixar animated short",
+            "still from film by Studio Ghibli, Hayao Miyazaki",
+            "Renaissance painting, neoclassical, Renoir",
+            "Impressionism, Monet, Van Gogh",
+            "Rococo, 1730, late Baroque",
+            "Art deco, vintage, moderne",
+            "Bauhaus, postwar midcentury style, Wassily Kandinsky",
+            "surrealist, Magritte, Salvador Dali",
+            "urban street photography",
+            "Thomas Kinkade",
+            "papercraft, origami, highly detailed"
+        ]
+    },
+    {
+        "name": "Vibes",
+        "options": [
+            "vaporwave, neon, 80s",
+            "post-apocalyptic",
+            "gothic, fantasy, lush, mystery",
+            "cybernetic, sci-fi, Matrix, glowing",
+            "steampunk, metallic, Victoriana",
+            "Memphis style, Memphis group, bold, kitch, colorful, geometric",
+            "Dieselpunk, grimy, steel, industrial",
+            "Afrofuturism, lush, solarpunk",
+            "cyberpunk, 90s, graphic",
+            "organic, lush, solarpunk, green, sustainable"
+        ]
+    },
+    {
+        "name": "Mood",
+        "options": [
+            "light, peaceful, calm, serene, soothing, relaxed, ethereal, delicate",
+            "bright, vibrant, dynamic, energetic, vivid, rich, saturated, exciting",
+            "muted, bleak, somber, melancholic, gloomy, sad, desaturated, dull, dim",
+            "dark, ominous, haunting, forboding, gloomy, stormy, sinister, shadowy, harrowing"
+        ]
+    },
+    {
+        "name": "Scale",
+        "options": [
+            "grand, high-scale, monumental, imposing, manmade, superstructure, perspective",
+            "ornate, delicate, precise, opulent, elegant, ornamental, fine, intricate, decorative",
+            "microscopic, tiny, invisible"
+        ]
+    },
+    {
+        "name": "MidJourney",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "Pictoplasma",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "trending on artstation",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "trending on Behance",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "Adobe After Effects",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "cel-shaded",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "Unreal Engine",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "CryEngine",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "Zbrush",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "OpenGL",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "2-bit",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "8-bit",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "16-bit RGB",
+        "category": "Computer graphics"
+    },
+    {
+        "name": "Beautiful Composition",
+        "category": "Design"
+    },
+    {
+        "name": "fine art",
+        "category": "Design"
+    },
+    {
+        "name": "photorealistic",
+        "category": "Design"
+    },
+    {
+        "name": "8k resolution",
+        "category": "Design"
+    },
+    {
+        "name": "16k resolution",
+        "category": "Design"
+    },
+    {
+        "name": "UHD",
+        "category": "Design"
+    },
+    {
+        "name": "highly detailed",
+        "category": "Design"
+    },
+    {
+        "name": "insanely detailed",
+        "category": "Design"
+    },
+    {
+        "name": "intricate",
+        "category": "Design"
+    },
+    {
+        "name": "maximalist",
+        "category": "Design"
+    },
+    {
+        "name": "minimalist",
+        "category": "Design"
+    },
+    {
+        "name": "a masterpiece",
+        "category": "Design"
+    },
+    {
+        "name": "deep color",
+        "category": "Light and colors"
+    },
+    {
+        "name": "muted colors",
+        "category": "Light and colors"
+    },
+    {
+        "name": "triadic colors",
+        "category": "Light and colors"
+    },
+    {
+        "name": "punchy colors",
+        "category": "Light and colors"
+    },
+    {
+        "name": "vibrant colors",
+        "category": "Light and colors"
+    },
+    {
+        "name": "rich colors",
+        "category": "Light and colors"
+    },
+    {
+        "name": "dramatic lighting",
+        "category": "Light and colors"
+    },
+    {
+        "name": "golden hour",
+        "category": "Light and colors"
+    },
+    {
+        "name": "natural lighting",
+        "category": "Light and colors"
+    },
+    {
+        "name": "volumetric lighting",
+        "category": "Light and colors"
+    },
+    {
+        "name": "Afrofuturism",
+        "category": "Style"
+    },
+    {
+        "name": "Art Nouveau",
+        "category": "Style"
+    },
+    {
+        "name": "Baroque",
+        "category": "Style"
+    },
+    {
+        "name": "Constructivism",
+        "category": "Style"
+    },
+    {
+        "name": "Impressionism",
+        "category": "Style"
+    },
+    {
+        "name": "Pop art",
+        "category": "Style"
+    },
+    {
+        "name": "Roccoco",
+        "category": "Style"
+    },
+    {
+        "name": "Surrealism",
+        "category": "Style"
+    },
+    {
+        "name": "Synthwave",
+        "category": "Style"
+    },
+    {
+        "name": "Extraterrestrial",
+        "category": "Style"
+    },
+    {
+        "name": "Anime",
+        "category": "Style"
+    },
+    {
+        "name": "Antique",
+        "category": "Style"
+    },
+    {
+        "name": "Borderlands",
+        "category": "Style"
+    },
+    {
+        "name": "Cottagecore",
+        "category": "Style"
+    },
+    {
+        "name": "Cyberpunk",
+        "category": "Style"
+    },
+    {
+        "name": "Cyborgism",
+        "category": "Style"
+    },
+    {
+        "name": "Dieselpunk",
+        "category": "Style"
+    },
+    {
+        "name": "Dystopian",
+        "category": "Style"
+    },
+    {
+        "name": "Eldritch",
+        "category": "Style"
+    },
+    {
+        "name": "Fantasy",
+        "category": "Style"
+    },
+    {
+        "name": "Horror",
+        "category": "Style"
+    },
+    {
+        "name": "Legogearpunk",
+        "category": "Style"
+    },
+    {
+        "name": "Manhua",
+        "category": "Style"
+    },
+    {
+        "name": "Manhwa",
+        "category": "Style"
+    },
+    {
+        "name": "Medieval",
+        "category": "Style"
+    },
+    {
+        "name": "MOBA style",
+        "category": "Style"
+    },
+    {
+        "name": "Mystical",
+        "category": "Style"
+    },
+    {
+        "name": "Normcore",
+        "category": "Style"
+    },
+    {
+        "name": "Post-apocalyptic",
+        "category": "Style"
+    },
+    {
+        "name": "Retro",
+        "category": "Style"
+    },
+    {
+        "name": "Retrowave",
+        "category": "Style"
+    },
+    {
+        "name": "Robotic",
+        "category": "Style"
+    },
+    {
+        "name": "Science Fiction",
+        "category": "Style"
+    },
+    {
+        "name": "Steampunk",
+        "category": "Style"
+    },
+    {
+        "name": "Utopian",
+        "category": "Style"
+    },
+    {
+        "name": "Vintage",
+        "category": "Style"
+    },
+    {
+        "name": "concept art",
+        "category": "Style"
+    },
+    {
+        "name": "cover art",
+        "category": "Style"
+    },
+    {
+        "name": "digital art",
+        "category": "Style"
+    },
+    {
+        "name": "Kawaii",
+        "category": "Style"
+    },
+    {
+        "name": "manga cover",
+        "category": "Style"
+    },
+    {
+        "name": "Polyptych",
+        "category": "Style"
+    },
+    {
+        "name": "Diptych",
+        "category": "Style"
+    },
+    {
+        "name": "Triptych",
+        "category": "Style"
+    },
+    {
+        "name": "poster art",
+        "category": "Style"
+    },
+    {
+        "name": "Splash screen art",
+        "category": "Style"
+    },
+    {
+        "name": "Anatomical illustration",
+        "category": "Techniques"
+    },
+    {
+        "name": "Brushpen drawing",
+        "category": "Techniques"
+    },
+    {
+        "name": "calligraphy",
+        "category": "Techniques"
+    },
+    {
+        "name": "Doodle",
+        "category": "Techniques"
+    },
+    {
+        "name": "Line art",
+        "category": "Techniques"
+    },
+    {
+        "name": "Figure drawing",
+        "category": "Techniques"
+    },
+    {
+        "name": "Caricature",
+        "category": "Techniques"
+    },
+    {
+        "name": "Charcoal art",
+        "category": "Techniques"
+    },
+    {
+        "name": "Cartoon style",
+        "category": "Techniques"
+    },
+    {
+        "name": "Comic book style",
+        "category": "Techniques"
+    },
+    {
+        "name": "ink drip",
+        "category": "Techniques"
+    },
+    {
+        "name": "Blueprint",
+        "category": "Techniques"
+    },
+    {
+        "name": "Carving",
+        "category": "Techniques"
+    },
+    {
+        "name": "Collage",
+        "category": "Techniques"
+    },
+    {
+        "name": "Embroidery",
+        "category": "Techniques"
+    },
+    {
+        "name": "Graffiti",
+        "category": "Techniques"
+    },
+    {
+        "name": "Low-poly",
+        "category": "Techniques"
+    },
+    {
+        "name": "Made of felt",
+        "category": "Techniques"
+    },
+    {
+        "name": "Paper quilling",
+        "category": "Techniques"
+    },
+    {
+        "name": "Pixel drawing",
+        "category": "Techniques"
+    },
+    {
+        "name": "Ukiyo-e",
+        "category": "Techniques"
+    },
+    {
+        "name": "X-ray",
+        "category": "Techniques"
+    },
+    {
+        "name": "Encaustic paint",
+        "category": "Techniques"
+    },
+    {
+        "name": "gouache painting",
+        "category": "Techniques"
+    },
+    {
+        "name": "matte painting",
+        "category": "Techniques"
+    },
+    {
+        "name": "oil painting",
+        "category": "Techniques"
+    },
+    {
+        "name": "oil splash",
+        "category": "Techniques"
+    },
+    {
+        "name": "paint stroke",
+        "category": "Techniques"
+    },
+    {
+        "name": "Watercolor",
+        "category": "Techniques"
+    },
+    {
+        "name": "Blacklight Paint",
+        "category": "Techniques"
+    },
+    {
+        "name": "Palette knife painting",
+        "category": "Techniques"
+    },
+    {
+        "name": "speedpaint with large brush strokes and paint splatter",
+        "category": "Techniques"
+    },
+    {
+        "name": "Stencil painting",
+        "category": "Techniques"
+    },
+    {
+        "name": "Chiaroscuro",
+        "category": "Techniques"
+    },
+    {
+        "name": "cyanotype",
+        "category": "Techniques"
+    },
+    {
+        "name": "Daguerreotype",
+        "category": "Techniques"
+    },
+    {
+        "name": "Double exposure",
+        "category": "Techniques"
+    },
+    {
+        "name": "HDR",
+        "category": "Techniques"
+    },
+    {
+        "name": "Holography",
+        "category": "Techniques"
+    },
+    {
+        "name": "Infrared photography",
+        "category": "Techniques"
+    },
+    {
+        "name": "Light painting",
+        "category": "Techniques"
+    },
+    {
+        "name": "Photogravure",
+        "category": "Techniques"
+    },
+    {
+        "name": "professional photography",
+        "category": "Techniques"
+    },
+    {
+        "name": "sharp focus",
+        "category": "Techniques"
+    },
+    {
+        "name": "Tilt-Shift",
+        "category": "Techniques"
+    },
+    {
+        "name": "Xerography",
+        "category": "Techniques"
+    }
+]
