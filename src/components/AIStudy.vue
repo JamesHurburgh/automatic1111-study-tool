@@ -18,7 +18,7 @@
   </v-navigation-drawer>
   <!-- <Images v-if="selectedPage == 'Images'" /> -->
   <ImageList v-if="selectedPage == 'Images'" />
-  <Artists v-if="selectedPage == 'Artists'" />
+  <ArtistList v-if="selectedPage == 'Artists'" />
   <Modifiers v-if="selectedPage == 'Modifiers'" />
 </template>
 
@@ -26,7 +26,7 @@
 import { defineComponent } from 'vue'
 import Images from './Images.vue'
 import ImageList from './ImageList.vue'
-import Artists from './Artists.vue'
+import ArtistList from './ArtistList.vue'
 import Modifiers from './Modifiers.vue'
 import artists from '../assets/artists.json'
 import modifiers from '../assets/modifiers.json'
@@ -61,7 +61,7 @@ export default defineComponent({
   components: {
     Images,
     ImageList,
-    Artists,
+    ArtistList,
     Modifiers
   }
 })

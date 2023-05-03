@@ -1,7 +1,8 @@
 
 import { Keyva } from 'keyvajs'
+import { Artist } from './Artist';
 
-class ArtistsDatabase {
+class ArtistDatabase {
 
     private static _kv = new Keyva();
     private static _databaseName: string = 'ArtistDatabase'
@@ -11,6 +12,14 @@ class ArtistsDatabase {
         if (this._database) return
         console.log("Initialising Artist Database.")
         this._database = JSON.parse(await this._kv.get(this._databaseName) || "[]") as Artist[]
+    }
+
+    public static getFilteredPage(params: { pageNumber: number; pageSize: number; }): Promise<Artist[]> {
+        this.initialise()
+        const startIndex = (params.pageNumber - 1) * params.pageSize;
+        const endIndex = startIndex + params.pageSize;
+        return this._database
+            .slice(startIndex, endIndex)
     }
 
     static addArtist(artist: Artist): void {
@@ -36,3 +45,5 @@ class ArtistsDatabase {
         return this._database.filter(artist => artist.name === name);
     }
 }
+
+export { ArtistDatabase };
