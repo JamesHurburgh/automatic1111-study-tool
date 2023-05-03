@@ -29,14 +29,15 @@ class Automate1111Metadata {
         this.model = model;
     }
 
-    static fromPngMetadata(data: string): Automate1111Metadata {
+    static fromPngMetadata(data: string): Automate1111Metadata | null {
         const regex = /^parameters\u0000+(?<prompt>.+)\nSteps:\s+(?<steps>\d+),\s+Sampler:\s+(?<sampler>.+),\s+CFG scale:\s+(?<cfgScale>\d+),\s+Seed:\s+(?<seed>\d+),\s+Size:\s+(?<size>\d+x\d+),\s+Model hash:\s+(?<modelHash>\w+),\s+Model:\s+(?<model>.+)$/gm;
 
         // console.log(data)
         const matches = regex.exec(data);
 
         if (!matches || !matches.groups) {
-            throw new Error('Invalid metadata format');
+            console.log(`Unable to parse metadata:\n${data}`)
+            return null
         }
 
         return {
