@@ -1,11 +1,12 @@
 <template>
   <v-system-bar window>
     <v-spacer></v-spacer>
-    <v-icon class="ms-2">mdi-account</v-icon> <span>{{ artists.length }}</span>
+    <v-icon class="ms-2">mdi-account</v-icon>
+    <span>{{ databaseStats.totalArtists }}</span>
     <v-icon class="ms-2">mdi-image</v-icon>
-    <span>{{ imageDatabaseStats.totalImages }} / {{ imagesWatched }}</span>
+    <span>{{ databaseStats.totalImages }} / {{ imagesWatched }}</span>
     <v-icon class="ms-2">mdi-image-filter-vintage</v-icon>
-    <span>{{ modifiers.length }}</span>
+    <span>{{ databaseStats.totalModifiers }}</span>
   </v-system-bar>
   <v-navigation-drawer permanent>
     <v-list-item title="AI Study" subtitle="Diffusion prompts made easy">
@@ -31,8 +32,9 @@ import Modifiers from './Modifiers.vue'
 import artists from '../assets/artists.json'
 import modifiers from '../assets/modifiers.json'
 import { ImageDatabase } from '@/types/ImageDatabase';
+import { ArtistDatabase } from '@/types/ArtistDatabase';
 import { ImageWatcher } from '@/types/ImageWatcher'
-import { ImageDatabaseStats } from '@/types/ImageDatabaseStats'
+import { DatabaseStats } from '@/types/DatabaseStats'
 
 export default defineComponent({
   data() {
@@ -40,7 +42,7 @@ export default defineComponent({
       artists: artists,
       modifiers: modifiers,
       selectedPage: "Images",
-      imageDatabaseStats: ImageDatabaseStats,
+      databaseStats: DatabaseStats,
       pages: [
         { title: "Images", icon: 'mdi-image' },
         { title: "Artists", icon: 'mdi-account' },

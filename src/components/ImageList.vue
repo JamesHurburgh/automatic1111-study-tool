@@ -1,36 +1,48 @@
 <template>
-  <v-card class="fill-height" scrollable flat density="compact">
-    <v-toolbar color="primary" dark>
+  <v-card class="fill-height" scrollable>
+    <v-toolbar>
       <v-toolbar-title>Image List</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon="mdi-dots-vertical" @click="showFilters = !showFilters">
-      </v-btn>
     </v-toolbar>
-    <v-toolbar v-if="showFilters">
-      <v-toolbar-title>Filters</v-toolbar-title>
-      <v-autocomplete clearable prepend-inner-icon="mdi-account" :items="artists" v-model="selectedArtists" multiple
-        label="Artists" density="compact"></v-autocomplete>
-    </v-toolbar>
-    <v-card-text>
-      <v-list :lines="false" density="compact">
+    <v-card-text class="fill-height flex-grow-1" style="overflow-y: auto;">
+      <!-- <v-list>
         <v-list-item v-for="(image, i) in filteredImages" :key="i" :value="image" active-color="primary"
           :title="imageTitle(image)">
-          <template v-slot:prepend>
-            <v-avatar rounded="0" size="x-large">
-              <v-img :src="image.id"></v-img>
-            </v-avatar>
-          </template>
-
-          <v-list-item-subtitle>
-            {{ imageSubtitle(image) }}
-          </v-list-item-subtitle>
         </v-list-item>
-      </v-list>
+      </v-list> -->
+      <v-data-table-virtual
+    :custom-filter="filterImages"
+        v-model:items-per-page="pageSize"
+        :headers="headers"
+      fixed-header
+        :items="images"
+        :search="promptSearch"
+    height="400"
+        class="elevation-1">
+        <template v-slot:top>
+          <v-text-field
+            v-model="promptSearch"
+            append-inner-icon="mdi-magnify"
+            label="Search by prompt"
+          ></v-text-field>
+        </template>
+        <template v-slot:item.id="{ item }">
+          <v-img :src="item.value" cover></v-img>
+        </template>
+        <template v-slot:item.prompt="{ item }">
+          {{  item.raw.metaData?.prompt }}
+        </template>
+        <template v-slot:item.model="{ item }">
+          {{  item.raw.metaData?.model }}
+        </template>
+        <template v-slot:item.sampler="{ item }">
+          {{  item.raw.metaData?.sampler }}
+        </template>
+
+      </v-data-table-virtual>
     </v-card-text>
     <v-card-actions>
       <div class="text-center">
-        <v-pagination v-model="pageNumber" :length="totalPages" total-visible="10" rounded="circle"
-          prev-icon="mdi-menu-left" next-icon="mdi-menu-right"></v-pagination>
+        <v-pagination v-model="pageNumber" :length="totalPages" total-visible="10"></v-pagination>
       </div>
     </v-card-actions>
   </v-card>
@@ -40,7 +52,10 @@
 import { defineComponent } from "vue";
 import { ImageDatabase } from "@/types/ImageDatabase";
 import { LocalImage } from "@/types/LocalImage";
-import { ImageDatabaseStats } from "@/types/ImageDatabaseStats";
+import { DatabaseStats } from "@/types/DatabaseStats";
+import { VDataTable } from 'vuetify/labs/VDataTable'
+import { VDataTableVirtual } from 'vuetify/labs/VDataTable'
+
 
 export default defineComponent({
   data() {
@@ -50,12 +65,18 @@ export default defineComponent({
       imageSize: 2,
       showFilters: false,
       selectedArtists: [],
-      artists: [
-        "Anna Dittman",
-        "Van Gogh",
-        "Francis Bacon",
-        "William Blake",
-        "Henry Bone",
+      promptSearch: "",
+      images: ImageDatabase.getAll(),
+      headers: [
+        {
+          title: 'Image',
+          align: 'start',
+          sortable: false,
+          key: 'id',
+        },
+        { title: 'Prompt', align: 'end', key: 'prompt' },
+        { title: 'Model', align: 'end', key: 'model' },
+        { title: 'Sampler', align: 'end', key: 'sampler' },
       ],
     };
   },
@@ -67,7 +88,7 @@ export default defineComponent({
       return ImageDatabase.getFilteredPage({
         pageNumber: this.pageNumber,
         pageSize: this.pageSize,
-        artistFitler: this.selectedArtists
+        artistFilter: this.selectedArtists
       }
       )
     },
@@ -79,16 +100,17 @@ export default defineComponent({
     },
   },
   methods: {
-    imageTitle: function (image: LocalImage) {
-      return image.metaData?.prompt;
-    },
-    imageSubtitle: function (image: LocalImage) {
-      if (!image.metaData) return "";
-      return Object.entries(image.metaData)
-        .map(([key, value]) => `${key}: ${value}`)
-        .join(", ");
-    },
+    filterImages (value: string, query: string, item?: any) {
+      // console.log(item)
+      return value != null &&
+        query != null &&
+        typeof value === 'string' &&
+        item.raw.metaData?.prompt.toLowerCase().indexOf(query.toLowerCase()) !== -1    },
   },
+  components: {
+    VDataTable,
+    VDataTableVirtual
+  }
 });
 </script>
   

@@ -65,7 +65,7 @@
 import { defineComponent } from 'vue'
 import { ImageDatabase } from '@/types/ImageDatabase';
 import { LocalImage } from '@/types/LocalImage';
-import { ImageDatabaseStats } from '@/types/ImageDatabaseStats';
+import { DatabaseStats } from '@/types/DatabaseStats';
 
 export default defineComponent({
     data() {
@@ -83,7 +83,7 @@ export default defineComponent({
             var page = ImageDatabase.dao.getPage<LocalImage>(this.pageNumber, this.pageSize)
             return page
         },
-        totalPages: function () { return Math.ceil(ImageDatabaseStats.totalImages / this.pageSize) },
+        totalPages: function () { return Math.ceil(DatabaseStats.totalImages / this.pageSize) },
         pageSize: function ():number { return 24 / this.imageSize }
     }
 })

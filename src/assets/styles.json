@@ -1,0 +1,258 @@
+[
+    {
+        "style": "Abstract",
+        "substyles": [
+            "Cubism",
+            "Expressionism",
+            "Futurism",
+            "Neoplasticism",
+            "Surrealism"
+        ],
+        "summary": "Non-representational and emphasizing form, color, and texture.",
+        "description": "Abstract art is a style of art that does not attempt to represent external reality, but seeks to achieve its effect using shapes, colors, and textures. This type of art often involves the use of geometric shapes, bold colors, and strong lines.",
+        "notableArtists": [
+            "Wassily Kandinsky",
+            "Piet Mondrian",
+            "Jackson Pollock"
+        ]
+    },
+    {
+        "style": "Realism",
+        "substyles": [
+            "Photorealism",
+            "Hyperrealism"
+        ],
+        "summary": "Depicting subjects as they appear in reality.",
+        "description": "Realism is an artistic style that aims to represent subjects as they appear in real life. It often involves the use of detailed, lifelike representations of people, objects, and scenery, and can be used to convey a sense of realism or naturalism.",
+        "notableArtists": [
+            "Gustave Courbet",
+            "Jean-Francois Millet",
+            "Diego Velázquez"
+        ]
+    },
+    {
+        "style": "Impressionism",
+        "substyles": [],
+        "summary": "Depicting the effect of light and color in the outdoors.",
+        "description": "Impressionism is a style of painting that originated in France in the late 19th century. It is characterized by its focus on the effect of light and color on the outdoors, as well as its loose brushwork and emphasis on capturing a moment in time.",
+        "notableArtists": [
+            "Claude Monet",
+            "Pierre-Auguste Renoir",
+            "Edgar Degas"
+        ]
+    },
+    {
+        "style": "Expressionism",
+        "substyles": [
+            "Abstract Expressionism",
+            "Neo-Expressionism"
+        ],
+        "summary": "Emphasizing emotions and subjective interpretations.",
+        "description": "Expressionism is an artistic style that emphasizes subjective interpretations of reality, often using vivid colors, distorted forms, and strong emotions to convey a sense of unease or discomfort. It can be used to express personal or political beliefs, and is often associated with the early 20th century.",
+        "notableArtists": [
+            "Edvard Munch",
+            "Vincent van Gogh",
+            "Franz Marc"
+        ]
+    },
+    {
+        "style": "Pop Art",
+        "substyles": [],
+        "summary": "Using popular imagery and culture as subject matter.",
+        "description": "Pop art is a style of art that emerged in the 1950s and 1960s, characterized by its use of popular culture and imagery, such as advertisements, comic books, and celebrities, as subject matter. It often involves the use of bright colors, bold lines, and repetition.",
+        "notableArtists": [
+            "Andy Warhol",
+            "Roy Lichtenstein",
+            "Richard Hamilton"
+        ]
+    },
+    {
+        "style": "Surrealism",
+        "substyles": [
+            "Biomorphic Surrealism",
+            "Veristic Surrealism"
+        ],
+        "summary": "A style characterized by dreamlike imagery and juxtaposition of unlikely elements.",
+        "description": "Surrealism is an art movement that emerged in the 1920s, known for its dreamlike imagery and the juxtaposition of seemingly unrelated elements to create a sense of the subconscious mind. Surrealism often features biomorphic shapes, or shapes that resemble living organisms, and it can be divided into two substyles: biomorphic surrealism, which emphasizes the organic forms of the natural world, and veristic surrealism, which features precise, realistic renderings of surreal objects.",
+        "notableArtists": [
+            "Salvador Dali",
+            "Rene Magritte",
+            "Max Ernst"
+        ]
+    },
+    {
+        "style": "Cubism",
+        "substyles": [
+            "Analytical Cubism",
+            "Synthetic Cubism"
+        ],
+        "summary": "A style characterized by the fragmentation of objects and space.",
+        "description": "Cubism is an art movement that emerged in the early 20th century, known for its use of geometric shapes and the fragmentation of objects and space. Cubism can be divided into two substyles: analytical cubism, which uses a monochromatic palette and focuses on the analysis of form and space, and synthetic cubism, which incorporates collage and other materials to create a more decorative effect.",
+        "notableArtists": [
+            "Pablo Picasso",
+            "Georges Braque",
+            "Juan Gris"
+        ]
+    },
+    {
+        "style": "Minimalism",
+        "substyles": [
+            "Literal Minimalism",
+            "Conceptual Minimalism"
+        ],
+        "summary": "A style characterized by the use of minimal elements, often geometric shapes or monochromatic color schemes.",
+        "description": "Minimalism is an art movement that emerged in the 1960s, characterized by the use of minimal elements such as geometric shapes, monochromatic color schemes, and often a lack of decoration or narrative content. Minimalism can be divided into two substyles: literal minimalism, which focuses on the literal qualities of the materials used and the way they are arranged, and conceptual minimalism, which emphasizes the underlying concepts and ideas behind the work.",
+        "notableArtists": [
+            "Donald Judd",
+            "Dan Flavin",
+            "Agnes Martin"
+        ]
+    },
+    {
+        "style": "Baroque",
+        "substyles": [
+            "Dutch Baroque",
+            "Italian Baroque"
+        ],
+        "summary": "A style characterized by dramatic and emotional use of light, shadow, and color.",
+        "description": "Baroque is an art movement that emerged in the 17th century, characterized by the use of dramatic and emotional effects such as dynamic composition, intense light and shadow, and vivid colors. Baroque can be divided into two substyles: Dutch Baroque, which emphasizes realism and the use of everyday subject matter, and Italian Baroque, which is characterized by grandeur, ornamentation, and a focus on religious themes.",
+        "notableArtists": [
+            "Caravaggio",
+            "Peter Paul Rubens",
+            "Rembrandt"
+        ]
+    },
+    {
+        "style": "Rococo",
+        "substyles": [
+            "Late Baroque"
+        ],
+        "summary": "Ornate, playful and delicate art style that emerged in the early 18th century France.",
+        "description": "Rococo is an art style characterized by decorative motifs, delicate colors, and a focus on lightness and frivolity. It emerged in France during the early 18th century as a reaction against the grandeur and formality of Baroque art. Rococo paintings often depict playful, lighthearted scenes of aristocratic life, featuring ornate costumes and decorative details.",
+        "notableArtists": [
+            "Jean-Honoré Fragonard",
+            "Antoine Watteau",
+            "François Boucher"
+        ]
+    },
+    {
+        "style": "Romanticism",
+        "substyles": [
+            "Dark Romanticism",
+            "Neo-Romanticism"
+        ],
+        "summary": "Artistic and literary movement that emphasizes emotion and individualism, as well as glorification of nature and the past.",
+        "description": "Romanticism is an artistic and literary movement that originated in Europe in the late 18th century and lasted throughout the 19th century. It emphasized emotion and individualism, as well as glorification of nature and the past. Romantic art is often characterized by vivid colors, dramatic contrasts, and intense emotions. Some sub-styles of Romanticism include Dark Romanticism, which explores the darker aspects of human nature and the supernatural, and Neo-Romanticism, which emerged in the 20th century and revisits Romantic themes with a contemporary perspective.",
+        "notableArtists": [
+            "William Turner",
+            "Eugène Delacroix",
+            "Caspar David Friedrich"
+        ]
+    },
+    {
+        "style": "Renaissance",
+        "substyles": [
+            "Italian Renaissance",
+            "Northern Renaissance"
+        ],
+        "summary": "Period of European cultural, artistic and scientific rebirth that began in Italy during the 14th century and later spread throughout Europe.",
+        "description": "The Renaissance was a period of European cultural, artistic, and scientific rebirth that began in Italy during the 14th century and later spread throughout Europe. The Renaissance was characterized by a renewed interest in classical learning and values, and a focus on humanism and individualism. Renaissance art is often characterized by realism, perspective, and a focus on the human form. Some sub-styles of Renaissance art include Italian Renaissance, which is characterized by a focus on harmony and balance, and Northern Renaissance, which is characterized by a focus on intricate detail and symbolism.",
+        "notableArtists": [
+            "Leonardo da Vinci",
+            "Michelangelo",
+            "Raphael"
+        ]
+    },
+    {
+        "style": "Art Nouveau",
+        "substyles": [
+            "Tiffany style"
+        ],
+        "summary": "International art movement characterized by organic, flowing lines and ornate decorative motifs.",
+        "description": "Art Nouveau was an international art movement that emerged in the late 19th century and lasted until the outbreak of World War I. It was characterized by organic, flowing lines, ornate decorative motifs, and a focus on natural forms and structures. Art Nouveau had a significant influence on decorative arts, architecture, and graphic design. One notable sub-style of Art Nouveau is Tiffany style, which is characterized by the use of stained glass and ornate metalwork.",
+        "notableArtists": [
+            "Alphonse Mucha",
+            "Gustav Klimt",
+            "Louis Comfort Tiffany"
+        ]
+    },
+    {
+        "style": "Art Deco",
+        "substyles": [],
+        "summary": "A style characterized by bold geometric shapes, intricate patterns, and lavish materials.",
+        "description": "Art Deco was a popular style in the 1920s and 1930s, and is often associated with luxury and glamour. It features clean lines, bright colors, and a focus on symmetry and repetition. The style is often used in architecture, fashion, and interior design.",
+        "notableArtists": [
+            "Tamara de Lempicka",
+            "Erté",
+            "Paul Iribe"
+        ]
+    },
+    {
+        "style": "Post-Impressionism",
+        "substyles": [],
+        "summary": "A style that emphasizes color, form, and expression, and often involves a departure from realistic representation.",
+        "description": "Post-Impressionism was a movement that emerged in the late 19th century, and was characterized by a focus on the artist's subjective experience and the use of bold colors and unconventional forms. Artists working in this style sought to move beyond the limitations of Impressionism, and often emphasized emotion and personal expression in their work.",
+        "notableArtists": [
+            "Vincent van Gogh",
+            "Paul Cézanne",
+            "Georges Seurat"
+        ]
+    },
+    {
+        "style": "Fauvism",
+        "substyles": [],
+        "summary": "A style characterized by bold, bright colors and simplified forms.",
+        "description": "Fauvism was a short-lived movement that emerged in the early 20th century, and was known for its use of intense, vivid colors and simplified forms. Fauvist artists often used color to express emotion, rather than to reproduce the natural world accurately.",
+        "notableArtists": [
+            "Henri Matisse",
+            "André Derain",
+            "Raoul Dufy"
+        ]
+    },
+    {
+        "style": "Dadaism",
+        "substyles": [],
+        "summary": "A style characterized by an anarchic, anti-art sensibility and a rejection of traditional values and norms.",
+        "description": "Dadaism was a movement that emerged in the early 20th century, and was characterized by its rejection of conventional artistic values and its embrace of absurdity and irrationality. Dadaist artists often created works that were intentionally nonsensical or offensive, and sought to undermine the authority of traditional institutions and norms.",
+        "notableArtists": [
+            "Marcel Duchamp",
+            "Hannah Höch",
+            "Man Ray"
+        ]
+    },
+    {
+        "style": "Neo-Expressionism",
+        "substyles": [],
+        "summary": "A contemporary movement characterized by intense, gestural brushwork and vivid colors.",
+        "description": "Neo-Expressionism emerged in the late 1970s as a reaction against the cool, detached aesthetic of Minimalism and Conceptual art. Artists working in this style sought to express raw emotion and personal experience through intense, gestural brushwork, vivid colors, and aggressive mark-making. They often used recognizable imagery and references to popular culture, as well as a wide range of media, including painting, sculpture, and printmaking.",
+        "notableArtists": [
+            "Jean-Michel Basquiat",
+            "Anselm Kiefer",
+            "Julian Schnabel"
+        ]
+    },
+    {
+        "style": "Conceptual Art",
+        "substyles": [],
+        "summary": "An art movement that prioritizes the idea or concept behind the artwork over its physical form or aesthetic qualities.",
+        "description": "Conceptual art emerged in the 1960s as a rejection of traditional art practices and aesthetics. Rather than creating objects of aesthetic value, conceptual artists prioritized the idea or concept behind the artwork. The physical form of the artwork was often minimal or absent altogether, and the focus was on the idea or message it conveyed. The movement included a wide range of media, including performance, installation, and text-based works.",
+        "notableArtists": [
+            "Sol LeWitt",
+            "Joseph Kosuth",
+            "Yoko Ono"
+        ]
+    },
+    {
+        "style": "Graffiti Art",
+        "substyles": [
+            "Street Art"
+        ],
+        "summary": "A style of art characterized by writing or drawing on public surfaces, often with spray paint.",
+        "description": "Graffiti art originated in the late 1960s as a form of urban self-expression, often associated with youth culture and hip-hop. It is typically characterized by writing or drawing on public surfaces, such as walls or trains, often with spray paint. Graffiti artists often use pseudonyms, or 'tags', to identify themselves and their work. In recent years, graffiti art has gained greater recognition as a legitimate art form, with some artists transitioning from the streets to the gallery.",
+        "notableArtists": [
+            "Jean-Michel Basquiat",
+            "Banksy",
+            "Keith Haring"
+        ]
+    }
+]

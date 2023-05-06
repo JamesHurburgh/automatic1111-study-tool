@@ -1,0 +1,28 @@
+Abstract
+Expressionism
+Impressionism
+Surrealism
+Realism
+Pop Art
+Cubism
+Minimalism
+Baroque
+Rococo
+Romanticism
+Renaissance
+Art Nouveau
+Art Deco
+Post-Impressionism
+Fauvism
+Dadaism
+Neo-Expressionism
+Conceptual Art
+Graffiti Art
+
+{
+    "style" : "<name>",
+    "substyles" : [ "<substyle>" ],
+    "summary" : "<one sentance description>",
+    "description" : "<longer description>",
+    "notableArtists" : [ "<notable artist name>" ]
+}

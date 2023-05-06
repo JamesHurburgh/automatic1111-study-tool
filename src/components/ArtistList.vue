@@ -1,38 +1,75 @@
 <template>
   <v-card class="fill-height" scrollable flat density="compact">
     <v-toolbar color="primary" dark>
-      <v-toolbar-title>Artist List</v-toolbar-title>
+      <v-toolbar-title>Artists</v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-btn icon="mdi-plus" @click="addArtistDialog = !addArtistDialog">
+      </v-btn>
       <v-btn icon="mdi-dots-vertical" @click="showFilters = !showFilters">
       </v-btn>
     </v-toolbar>
     <v-toolbar v-if="showFilters">
       <v-toolbar-title>Filters</v-toolbar-title>
-      <v-autocomplete clearable prepend-inner-icon="mdi-account" :items="artists" v-model="selectedArtists" multiple
-        label="Artists" density="compact"></v-autocomplete>
+
     </v-toolbar>
     <v-card-text>
-      <v-list :lines="false" density="compact">
-        <v-list-item v-for="(artist, i) in filteredArtists" :key="i" :value="artist" active-color="primary"
-          :title="artistTitle(artist)">
-          <template v-slot:prepend>
-            <v-avatar rounded="0" size="x-large">
-              <!-- <v-img :src="artist.id"></v-img> -->
-            </v-avatar>
-          </template>
+      <v-data-table
+        v-model:items-per-page="pageSize"
+        :headers="[{ 'title': 'Name', 'key': 'name' }]"
+        :items="artists"
+        density="compact"
+        show-expand
+        item-value="name"
+        :search="artistSearch"
+        class="elevation-1">
+        <template v-slot:top>
+          <v-text-field
+            v-model="artistSearch"
+            append-inner-icon="mdi-magnify"
+            label="Search by an artists name"
+          ></v-text-field>
+        </template>
+        <template v-slot:expanded-row="{ columns, item }">
+          <tr>
+            <td :colspan="columns.length">
+              <ImageRow :artist-name="item.raw.name"></ImageRow>
+            </td>
+          </tr>
+        </template>
+      </v-data-table>
 
-          <v-list-item-subtitle>
-            {{ artistSubtitle(artist) }}
-          </v-list-item-subtitle>
-        </v-list-item>
-      </v-list>
+      <!-- <v-virtual-scroll :items="filteredArtists" class="fill-height">
+        <template v-slot:default="{ item }">
+          <v-expansion-panels>
+            <v-expansion-panel>
+              <v-expansion-panel-title>
+                <v-avatar class="ms-2">
+                  <v-img :src="artistAvatar(item)"></v-img>
+                </v-avatar>
+                <span>
+                  {{ artistTitle(item) }}
+                  {{ artistSubtitle(item) }}
+                </span>
+                <v-icon>mdi-image</v-icon>
+                <span>{{ artistImageCount(item) }}</span>
+              </v-expansion-panel-title>
+              <v-expansion-panel-text>
+                <ImageRow :artist-name="item.name"></ImageRow>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </template>
+      </v-virtual-scroll> -->
     </v-card-text>
     <v-card-actions>
       <div class="text-center">
-        <v-pagination v-model="pageNumber" :length="totalPages" total-visible="10" rounded="circle"
-          prev-icon="mdi-menu-left" next-icon="mdi-menu-right"></v-pagination>
+        <!-- <v-pagination v-model="pageNumber" :length="totalPages" total-visible="10" rounded="circle"
+          prev-icon="mdi-menu-left" next-icon="mdi-menu-right"></v-pagination> -->
       </div>
     </v-card-actions>
+    <v-dialog v-model="addArtistDialog" width="800">
+      <ArtistUploadDialog></ArtistUploadDialog>
+    </v-dialog>
   </v-card>
 </template>
   
@@ -40,22 +77,24 @@
 import { defineComponent } from "vue";
 import { ArtistDatabase } from "@/types/ArtistDatabase";
 import { Artist } from "@/types/Artist";
+import ArtistUploadDialog from "./ArtistUploadDialog.vue"
+import ImageRow from "./ImageRow.vue"
+import { ImageDatabase } from "@/types/ImageDatabase";
+import { VDataTable } from 'vuetify/labs/VDataTable'
 
 export default defineComponent({
   data() {
     return {
       pageNumber: 1,
       model: null as unknown as Artist,
-      artistSize: 2,
+      pageSize: 10,
       showFilters: false,
+      addArtistDialog: false,
       selectedArtists: [],
-      artists: [
-        "Anna Dittman",
-        "Van Gogh",
-        "Francis Bacon",
-        "William Blake",
-        "Henry Bone",
-      ],
+      imageDetailDialog: false,
+      selectedImage: "",
+      artistSearch: "",
+      artists: ArtistDatabase.getArtists()
     };
   },
   created() {
@@ -63,6 +102,7 @@ export default defineComponent({
   },
   computed: {
     filteredArtists: function (): Artist[] {
+      ArtistDatabase.initialise()
       return ArtistDatabase.getFilteredPage({
         pageNumber: this.pageNumber,
         pageSize: this.pageSize
@@ -70,10 +110,7 @@ export default defineComponent({
       )
     },
     totalPages: function () {
-      return Math.ceil(this.filteredArtists.length / this.pageSize);
-    },
-    pageSize: function (): number {
-      return 24 / this.artistSize;
+      return Math.ceil(ArtistDatabase.getArtists().length / this.pageSize);
     },
   },
   methods: {
@@ -81,9 +118,23 @@ export default defineComponent({
       return artist.name
     },
     artistSubtitle: function (artist: Artist) {
+      const imageCount = ImageDatabase.getFilteredPage({ pageNumber: 1, pageSize: 1000, artistFilter: [artist.name] }).length
       return `${artist.movement} ${artist.style}`
     },
+    artistImageCount: function (artist: Artist) {
+      return ImageDatabase.getFilteredPage({ pageNumber: 1, pageSize: 1000, artistFilter: [artist.name] }).length
+    },
+    artistAvatar: function (artist: Artist) {
+      const image = ImageDatabase.getFilteredPage({ pageNumber: 1, pageSize: 1, artistFilter: [artist.name] })[0]
+      if (image) return image.id
+      return ""
+    },
   },
+  components: {
+    ArtistUploadDialog,
+    ImageRow,
+    VDataTable
+}
 });
 </script>
   
