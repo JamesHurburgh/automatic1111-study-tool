@@ -9,34 +9,21 @@
           :title="imageTitle(image)">
         </v-list-item>
       </v-list> -->
-      <v-data-table-virtual
-    :custom-filter="filterImages"
-        v-model:items-per-page="pageSize"
-        :headers="headers"
-      fixed-header
-        :items="images"
-        :search="promptSearch"
-    height="400"
-        class="elevation-1">
+      <v-data-table-virtual :custom-filter="filterImages" v-model:items-per-page="pageSize" :groupBy="groupBy" :headers="headers"
+        fixed-header :items="images" :search="promptSearch" height="400" class="elevation-1">
         <template v-slot:top>
-          <v-text-field
-            v-model="promptSearch"
-            append-inner-icon="mdi-magnify"
-            label="Search by prompt"
-          ></v-text-field>
+          <v-text-field v-model="promptSearch" append-inner-icon="mdi-magnify" label="Search by prompt"></v-text-field>
+          <v-select 
+    item-title="key"
+    item-value="key"
+    multiple v-model="groupBy" label="Group By" :items="[{key: 'seed'}, {key: 'model'}, {key: 'sampler'}]"></v-select>
         </template>
         <template v-slot:item.id="{ item }">
           <v-img :src="item.value" cover></v-img>
         </template>
-        <template v-slot:item.prompt="{ item }">
-          {{  item.raw.metaData?.prompt }}
-        </template>
-        <template v-slot:item.model="{ item }">
-          {{  item.raw.metaData?.model }}
-        </template>
-        <template v-slot:item.sampler="{ item }">
-          {{  item.raw.metaData?.sampler }}
-        </template>
+        <!-- <template v-slot:item.raw="{ item }">
+          {{  item.raw.metaData?.raw }}
+        </template> -->
 
       </v-data-table-virtual>
     </v-card-text>
@@ -66,17 +53,28 @@ export default defineComponent({
       showFilters: false,
       selectedArtists: [],
       promptSearch: "",
-      images: ImageDatabase.getAll(),
+      images: ImageDatabase.getAll().map(image => ({
+        id: image.id,
+        prompt: image.metaData?.prompt,
+        model: image.metaData?.model,
+        sampler: image.metaData?.sampler,
+        seed: image.metaData?.seed,
+        steps: image.metaData?.steps,
+      })),
+      groupBy: [{ key: 'model' }],
       headers: [
         {
           title: 'Image',
           align: 'start',
           sortable: false,
           key: 'id',
+          value: 'id',
         },
-        { title: 'Prompt', align: 'end', key: 'prompt' },
-        { title: 'Model', align: 'end', key: 'model' },
-        { title: 'Sampler', align: 'end', key: 'sampler' },
+        { title: 'Prompt', align: 'end', value: 'prompt' },
+        { title: 'Model', align: 'end', value: 'model' },
+        { title: 'Sampler', align: 'end', value: 'sampler' },
+        { title: 'Seed', align: 'end', value: 'seed' },
+        { title: 'Raw', align: 'end', key: 'raw' },
       ],
     };
   },
@@ -100,12 +98,18 @@ export default defineComponent({
     },
   },
   methods: {
-    filterImages (value: string, query: string, item?: any) {
-      // console.log(item)
-      return value != null &&
+    filterImages(value: string, query: string, item?: any) {
+      // console.log("filter")
+      return item.raw.metaData?.prompt &&
+        value != null &&
         query != null &&
-        typeof value === 'string' &&
-        item.raw.metaData?.prompt.toLowerCase().indexOf(query.toLowerCase()) !== -1    },
+        // typeof value === 'string' &&
+        (
+          item.raw.metaData?.prompt.toLowerCase().indexOf(query.toLowerCase()) !== -1
+          //   ||
+          // item.raw.metaData?.seed.toLowerCase().indexOf(query.toLowerCase()) !== -1
+        )
+    },
   },
   components: {
     VDataTable,

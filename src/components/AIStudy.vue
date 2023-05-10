@@ -18,7 +18,8 @@
     </v-list>
   </v-navigation-drawer>
   <!-- <Images v-if="selectedPage == 'Images'" /> -->
-  <ImageList v-if="selectedPage == 'Images'" />
+  <Images v-if="selectedPage == 'Images'" />
+  <ImageList v-if="selectedPage == 'ImageList'" />
   <ArtistList v-if="selectedPage == 'Artists'" />
   <Modifiers v-if="selectedPage == 'Modifiers'" />
 </template>
@@ -45,6 +46,7 @@ export default defineComponent({
       databaseStats: DatabaseStats,
       pages: [
         { title: "Images", icon: 'mdi-image' },
+        { title: "ImageList", icon: 'mdi-image' },
         { title: "Artists", icon: 'mdi-account' },
         { title: "Modifiers", icon: 'mdi-image-filter-vintage' },
         // { title: "Subjects", icon: 'mdi-drawing' }
