@@ -1,7 +1,6 @@
 import { LocalImage } from './LocalImage'
 import { Dao } from './Dao'
 import { Keyva } from 'keyvajs'
-import { reactive } from 'vue'
 import { DatabaseStats } from './DatabaseStats'
 
 class ImageDatabase {
