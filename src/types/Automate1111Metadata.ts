@@ -1,5 +1,6 @@
 class Automate1111Metadata {
 
+    raw: string;
     prompt: string;
     steps: number;
     sampler: string;
@@ -10,6 +11,7 @@ class Automate1111Metadata {
     model: string;
 
     constructor(
+        raw: string,
         prompt: string,
         steps: number,
         sampler: string,
@@ -19,6 +21,7 @@ class Automate1111Metadata {
         modelHash: string,
         model: string
     ) {
+        this.raw = raw;
         this.prompt = prompt;
         this.steps = steps;
         this.sampler = sampler;
@@ -41,6 +44,7 @@ class Automate1111Metadata {
         }
 
         return {
+            raw: data,
             prompt: matches.groups.prompt,
             steps: Number(matches.groups.steps),
             sampler: matches.groups.sampler,
