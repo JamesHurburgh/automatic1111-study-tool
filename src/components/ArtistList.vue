@@ -15,7 +15,7 @@
     <v-card-text>
       <v-data-table
         v-model:items-per-page="pageSize"
-        :headers="[{ 'title': 'Name', 'key': 'name' }]"
+        :headers="headers"
         :items="artists"
         density="compact"
         show-expand
@@ -94,7 +94,13 @@ export default defineComponent({
       imageDetailDialog: false,
       selectedImage: "",
       artistSearch: "",
-      artists: ArtistDatabase.getArtists()
+      artists: ArtistDatabase.getArtists(),
+      headers: [
+        { title: 'Name', value: 'name' },
+        { title: 'Movement', value: 'movement' },
+        { title: 'Style', value: 'style' },
+        { title: 'Image Count', value: 'imageCount' },
+      ],
     };
   },
   created() {

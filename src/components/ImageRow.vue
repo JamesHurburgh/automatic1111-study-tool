@@ -4,11 +4,11 @@
       <v-responsive class="d-flex align-center text-center fill-height">
         <v-row no-gutters>
           <v-col v-for="image in images" :key="image.id" cols="4" md="1">
-            <v-img :src="image.id" :alt="image.metaData?.prompt" cover @click.stop="viewImage(image.id)">
+            <LazyImage :image-id="image.id"></LazyImage>
+            <!-- <v-img :src="image.id" :alt="image.metaData?.prompt" cover @click.stop="viewImage(image.id)">
             </v-img>
               <v-dialog v-model="imageDetailDialog" max-width="400">
-                <ImageDetail :image-id="selectedImage"></ImageDetail>
-              </v-dialog>
+              </v-dialog> -->
           </v-col>
         </v-row>
       </v-responsive>
@@ -21,6 +21,7 @@ import { defineComponent } from "vue";
 import { ImageDatabase } from "@/types/ImageDatabase";
 import { LocalImage } from "@/types/LocalImage";
 import ImageDetail from "./ImageDetail.vue";
+import LazyImage from "./LazyImage.vue";
 
 export default defineComponent({
   props: ['artistName'],
@@ -50,8 +51,9 @@ export default defineComponent({
     },
   },
   components: {
-    ImageDetail
-  },
+    ImageDetail,
+    LazyImage
+},
 });
 </script>
   

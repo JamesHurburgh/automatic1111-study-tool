@@ -1,6 +1,6 @@
 <template>
   <v-card class="fill-height" scrollable>
-    <v-toolbar>
+        <v-toolbar color="primary" dark>
       <v-toolbar-title>Image List</v-toolbar-title>
     </v-toolbar>
     <v-card-text class="fill-height flex-grow-1" style="overflow-y: auto;">
@@ -9,14 +9,10 @@
           :title="imageTitle(image)">
         </v-list-item>
       </v-list> -->
-      <v-data-table-virtual :custom-filter="filterImages" v-model:items-per-page="pageSize" :groupBy="groupBy" :headers="headers"
+      <v-data-table-virtual :custom-filter="filterImages" v-model:items-per-page="pageSize" :headers="headers"
         fixed-header :items="images" :search="promptSearch" height="400" class="elevation-1">
         <template v-slot:top>
           <v-text-field v-model="promptSearch" append-inner-icon="mdi-magnify" label="Search by prompt"></v-text-field>
-          <v-select 
-    item-title="key"
-    item-value="key"
-    multiple v-model="groupBy" label="Group By" :items="[{key: 'seed'}, {key: 'model'}, {key: 'sampler'}]"></v-select>
         </template>
         <template v-slot:item.id="{ item }">
           <v-img :src="item.value" cover></v-img>
@@ -61,7 +57,6 @@ export default defineComponent({
         seed: image.metaData?.seed,
         steps: image.metaData?.steps,
       })),
-      groupBy: [{ key: 'model' }],
       headers: [
         {
           title: 'Image',

@@ -1,6 +1,6 @@
 <template>
-    <v-card class="fill-height" scrollable density="compact">
-        <v-toolbar>
+    <v-card height="100%">
+        <v-toolbar color="primary" dark>
             <v-toolbar-title>Images</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-slider label="Image Size" v-model="imageSize" prepend-icon="mdi-image-size-select-small"
@@ -12,8 +12,9 @@
                     <v-responsive class="d-flex align-center text-center fill-height">
                         <v-row no-gutters>
                             <v-col v-for="image in images" :key="image.id" cols="4" :md="imageSize">
-                                <LazyImage :src="image.id" :lazySrc="image.id" :aspectRatio="1" :width="200" :height="200"
-                                    cover></LazyImage>
+                                <LazyImage
+                                    :imageId="image.id"
+                                    ></LazyImage>
                             </v-col>
                         </v-row>
                     </v-responsive>
@@ -29,6 +30,8 @@
                 </v-sheet>
             </v-expand-transition>
         </v-card-text>
+        <!-- The v-card-action sticks to the bottom of the v-card-->
+
         <v-card-actions>
             <div class="text-center">
                 <v-pagination v-model="pageNumber" :length="totalPages" total-visible="10" rounded="circle"

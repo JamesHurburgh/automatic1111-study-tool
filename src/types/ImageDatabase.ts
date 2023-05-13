@@ -17,7 +17,10 @@ class ImageDatabase {
 
     static getAll(): LocalImage[] {
         this.initialise()
-        return this._database;
+        return this._database.sort(() => Math.random() - 0.5)
+    }
+    public static getArtistsImageCount(artist: string): number {
+        return this._database.filter(li => li.metaData?.prompt.toLowerCase().includes(artist.toLowerCase())).length
     }
 
     public static getFilteredPage(params: { pageNumber: number; pageSize: number; artistFilter: string[]; }): LocalImage[] {

@@ -8,13 +8,31 @@
     <v-icon class="ms-2">mdi-image-filter-vintage</v-icon>
     <span>{{ databaseStats.totalModifiers }}</span>
   </v-system-bar>
-  <v-navigation-drawer permanent>
-    <v-list-item title="AI Study" subtitle="Diffusion prompts made easy">
+  <v-navigation-drawer
+    v-model="drawer"
+    :rail="rail"
+    permanent
+    @click="rail = false">
+    <v-list-item
+      nav
+      prepend-icon="mdi-image"
+      title="AI Study">
+      <template v-slot:append>
+        <v-btn variant="text" icon="mdi-chevron-left" @click.stop="rail = !rail"></v-btn>
+      </template>
     </v-list-item>
     <v-divider></v-divider>
     <v-list dense nav>
-      <v-list-item v-for="page in pages" :key="page.title" link @click="selectedPage = page.title"
-        :prepend-icon="page.icon" :title="page.title"></v-list-item>
+      <v-list-item
+        v-for="page in pages"
+        link
+        :key="page.title"
+        :prepend-icon="page.icon"
+        :title="page.title"
+        @click="selectedPage = page.title">
+        <!-- <v-icon>mdi-view-comfy</v-icon>
+      <v-icon>mdi-view-list</v-icon> -->
+      </v-list-item>
     </v-list>
   </v-navigation-drawer>
   <!-- <Images v-if="selectedPage == 'Images'" /> -->
@@ -32,21 +50,21 @@ import ArtistList from './ArtistList.vue'
 import Modifiers from './Modifiers.vue'
 import artists from '../assets/artists.json'
 import modifiers from '../assets/modifiers.json'
-import { ImageDatabase } from '@/types/ImageDatabase';
-import { ArtistDatabase } from '@/types/ArtistDatabase';
 import { ImageWatcher } from '@/types/ImageWatcher'
 import { DatabaseStats } from '@/types/DatabaseStats'
 
 export default defineComponent({
   data() {
     return {
+      drawer: true,
+      rail: true,
       artists: artists,
       modifiers: modifiers,
       selectedPage: "Images",
       databaseStats: DatabaseStats,
       pages: [
-        { title: "Images", icon: 'mdi-image' },
-        { title: "ImageList", icon: 'mdi-image' },
+        { title: "Images", icon: 'mdi-view-comfy' },
+        { title: "ImageList", icon: 'mdi-view-list' },
         { title: "Artists", icon: 'mdi-account' },
         { title: "Modifiers", icon: 'mdi-image-filter-vintage' },
         // { title: "Subjects", icon: 'mdi-drawing' }
@@ -55,10 +73,10 @@ export default defineComponent({
     }
   },
   created() {
-    
+
   },
-  computed:{
-    imagesWatched: function() { return ImageWatcher.imageCount },
+  computed: {
+    imagesWatched: function () { return ImageWatcher.imageCount },
     // imagesLoaded: function() { 
     //   return ImageDatabase.reactive.total }
   },
