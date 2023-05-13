@@ -5,7 +5,7 @@
     </v-img>
     <ImageDetailDialog :image-id="imageId"
     :show-image-detail-dialog="showImageDetailDialog"
-    @close="showImageDetailDialog = false"></ImageDetailDialog>
+    @close="closeDialog()"></ImageDetailDialog>
   </div>
 </template>
 
@@ -22,6 +22,12 @@ export default defineComponent({
       image: ImageDatabase.getById(this.imageId),
       showImageDetailDialog: false
     };
+  },
+  methods: {
+    closeDialog() {
+      console.log("closeDialog from Lazy Image")
+      this.showImageDetailDialog = false
+    }
   },
   components: {
     ImageDetailDialog

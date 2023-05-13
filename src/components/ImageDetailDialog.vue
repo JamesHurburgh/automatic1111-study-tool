@@ -1,6 +1,7 @@
 <template>
   <v-dialog
     fullscreen
+    persistent
     v-model="showImageDetailDialog">
     <v-card>
       <v-card-text class="ma-0 pa-0">
@@ -17,6 +18,7 @@
             </v-col>
             <v-col cols="4">
               <v-toolbar
+                density="compact"
                 color="primary">
                 <v-toolbar-title>Image</v-toolbar-title>
                 <v-spacer></v-spacer>
@@ -26,9 +28,9 @@
                   <v-icon>mdi-close</v-icon>
                 </v-btn>
               </v-toolbar>
-              <v-textarea readonly density="compact" label="Prompt" hide-details="auto"
+              <v-text-field auto-grow readonly density="compact" label="Prompt" hide-details="auto"
                 :model-value="image.metaData?.prompt" append-inner-icon="mdi-content-copy"
-                @click:append-inner="copy(image.metaData?.prompt)"></v-textarea>
+                @click:append-inner="copy(image.metaData?.prompt)"></v-text-field>
               <v-text-field readonly density="compact" label="Model" hide-details="auto"
                 :model-value="image.metaData?.model"></v-text-field>
               <v-text-field readonly density="compact" label="Sampler" hide-details="auto"
@@ -66,6 +68,7 @@ export default defineComponent({
       navigator.clipboard.writeText(text);
     },
     close() {
+      console.log("Closing dialog!")
       this.$emit("close");
     }
   },
